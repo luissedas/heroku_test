@@ -1,10 +1,15 @@
-import pytest
+"""Docstring"""
+
 def test_file1_method1():
-	x=5
-	y=6
-	assert x+1 == y,"test failed"
-	assert x == y,"test failed"
+    """_summary_
+    """
+    param_x = 5
+    param_y = 6
+    assert param_x+1 == param_y, "test failed"
+
 def test_file1_method2():
-	x=5
-	y=6
-	assert x+1 == y,"test failed" 
+    """_summary_
+    """
+    param_x = 5
+    param_y = 6
+    assert param_x + 1 == param_y, "test failed"
