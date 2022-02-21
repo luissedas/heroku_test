@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import utils as utils
 
-df = pd.read_csv("../data/census.csv")
+df = pd.read_csv("data/census.csv")
 
 # remove whitespace in column names
 df.columns = df.columns.str.replace(' ', '')
@@ -18,4 +18,4 @@ df = df[utils.predict_cols + utils.target_col]
 
 df.dropna(inplace=True)
 
-df.to_csv("../data_cleaned/census_cleaned.csv",index=False)
+df.to_csv("data_cleaned/census_cleaned.csv",index=False)

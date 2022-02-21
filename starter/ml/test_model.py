@@ -7,9 +7,9 @@ import numpy as np
 from pandas.core.frame import DataFrame
 import pytest
 from joblib import load
-from starter.data import process_data
-from starter.model import inference
-import starter.utils as utils
+from ml.data import process_data
+from ml.model import inference
+import ml.utils as utils
 
 @pytest.fixture
 def data():
