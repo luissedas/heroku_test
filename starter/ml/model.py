@@ -1,10 +1,12 @@
 """
 Module Docstring
 """
+import joblib
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
-from .data import process_data
+from data import process_data
+import utils
 
 
 def train_model(X_train, y_train):
@@ -101,4 +103,13 @@ def slice_metrics(data, model, encoder, lb, cat_features):
     metrics_df = pd.DataFrame(
         data=metrics_data,
         columns=['column', 'value', 'precision', 'recall', 'fbeta'])
+    metrics_df.to_csv("slice_output.txt")
     return metrics_df
+
+
+if __name__ == "__main__":
+    model = joblib.load("../../model/model.joblib")
+    encoder = joblib.load("../../model/encoder.joblib")
+    lb = joblib.load("../../model/lb.joblib")
+    df = pd.read_csv("../../data_cleaned/census_cleaned.csv")
+    slice_metrics(df, model, encoder, lb, utils.cat_features)
