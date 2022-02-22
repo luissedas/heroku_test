@@ -16,13 +16,13 @@ data = data[utils.predict_cols + utils.target_col]
 train, test = train_test_split(data, test_size=0.20)
 
 X_train, y_train, encoder, lb = process_data(
-    train, categorical_features=utils.cat_features, label="salary", 
+    train, categorical_features=utils.cat_features, label="salary",
     training=True
 )
 
 # Proces the test data with the process_data function.
 X_test, y_test, _, _ = process_data(
-    test, categorical_features=utils.cat_features, label="salary", 
+    test, categorical_features=utils.cat_features, label="salary",
     training=False, encoder=encoder, lb=lb
 )
 

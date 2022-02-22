@@ -43,7 +43,7 @@ def process_data(
     y : np.array
         Processed labels if labeled=True, otherwise empty np.array.
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
-        Trained OneHotEncoder if training is True, otherwise returns the 
+        Trained OneHotEncoder if training is True, otherwise returns the
         encoder passed
         in.
     lb : sklearn.preprocessing._label.LabelBinarizer
