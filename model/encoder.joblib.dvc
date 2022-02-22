@@ -1,4 +1,4 @@
 outs:
-- md5: 0ad86818ed8ec796752ab5a6db64a966
-  size: 3904
+- md5: 93c7e444e4ef273b89739ebb1c9b2df7
+  size: 3873
   path: encoder.joblib
