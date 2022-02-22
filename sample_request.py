@@ -1,5 +1,4 @@
 """Docstrings"""
-import json
 import requests
 
 data = {
