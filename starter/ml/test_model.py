@@ -16,7 +16,7 @@ def data():
     """
     Read the dataset used for training
     """
-    df = pd.read_csv("../data_cleaned/census_cleaned.csv")
+    df = pd.read_csv("data_cleaned/census_cleaned.csv")
     return df
 
 
