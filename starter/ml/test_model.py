@@ -45,8 +45,8 @@ def test_size_split(data):
     """
     Check that X and y have same number of rows when splitting
     """
-    encoder = load("../model/encoder.joblib")
-    lb = load("../model/lb.joblib")
+    encoder = load("model/encoder.joblib")
+    lb = load("model/lb.joblib")
 
     X_test, y_test, _, _ = process_data(
         data,
@@ -60,8 +60,8 @@ def test_process_encoder(data):
     """
     Check that the saved encoder is the same as when trained
     """
-    encoder_test = load("../model/encoder.joblib")
-    lb_test = load("../model/lb.joblib")
+    encoder_test = load("model/encoder.joblib")
+    lb_test = load("model/lb.joblib")
 
     _, _, encoder, lb = process_data(
         data,
@@ -76,9 +76,9 @@ def test_inference_above():
     """
     Check that inference is done correctly for >50K class
     """
-    model = load("../model/model.joblib")
-    encoder = load("../model/encoder.joblib")
-    lb = load("../model/lb.joblib")
+    model = load("model/model.joblib")
+    encoder = load("model/encoder.joblib")
+    lb = load("model/lb.joblib")
 
     # these tend to be features of >50k
     array = np.array([[
@@ -108,9 +108,9 @@ def test_inference_below():
     """
     Check that inference is done correctly for <=50K class
     """
-    model = load("../model/model.joblib")
-    encoder = load("../model/encoder.joblib")
-    lb = load("../model/lb.joblib")
+    model = load("model/model.joblib")
+    encoder = load("model/encoder.joblib")
+    lb = load("model/lb.joblib")
 
     array = np.array([[
         19,
