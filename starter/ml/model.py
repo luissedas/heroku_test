@@ -1,13 +1,12 @@
 """
 Module Docstring
 """
-
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 from .data import process_data
 
-# Optional: implement hyperparameter tuning.
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -30,7 +29,8 @@ def train_model(X_train, y_train):
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using precision, 
+    recall, and F1.
 
     Inputs
     ------
@@ -67,6 +67,7 @@ def inference(model, X):
     pred = model.predict(X)
     return pred
 
+
 def slice_metrics(data, model, encoder, lb, cat_features):
     """Calculates metrics while slicing on categorical features
 
@@ -94,7 +95,8 @@ def slice_metrics(data, model, encoder, lb, cat_features):
         for cat_val in cat_vals:
             value_index = data[data[col] == cat_val].index.values
             y_pred = inference(model, X[value_index])
-            precision, recall, fbeta = compute_model_metrics(y[value_index], y_pred)
+            precision, recall, fbeta = compute_model_metrics(
+                y[value_index], y_pred)
             metrics_data.append([col, cat_val, precision, recall, fbeta])
     metrics_df = pd.DataFrame(
         data=metrics_data,

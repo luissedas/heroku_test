@@ -1,7 +1,6 @@
 """
 Tests of model.py
 """
-
 import pandas as pd
 import numpy as np
 from pandas.core.frame import DataFrame
@@ -10,6 +9,7 @@ from joblib import load
 from ml.data import process_data
 from ml.model import inference
 import ml.utils as utils
+
 
 @pytest.fixture
 def data():
@@ -31,7 +31,7 @@ def test_used_cols(data):
     """
     Check that the columns in the training df are the same es the specified
     """
-    assert set(data.columns) == set([*utils.predict_cols, *utils.target_col]) 
+    assert set(data.columns) == set([*utils.predict_cols, *utils.target_col])
 
 
 def test_nona(data):
@@ -53,7 +53,7 @@ def test_size_split(data):
         categorical_features=utils.cat_features,
         label="salary", encoder=encoder, lb=lb, training=False)
 
-    assert len(X_test) == len(y_test) 
+    assert len(X_test) == len(y_test)
 
 
 def test_process_encoder(data):
@@ -95,9 +95,9 @@ def test_inference_above():
     df_temp = DataFrame(data=array, columns=utils.predict_cols)
 
     X, _, _, _ = process_data(
-                df_temp,
-                categorical_features=utils.cat_features,
-                encoder=encoder, lb=lb, training=False)
+        df_temp,
+        categorical_features=utils.cat_features,
+        encoder=encoder, lb=lb, training=False)
 
     pred = inference(model, X)
     y = lb.inverse_transform(pred)[0]
@@ -123,14 +123,14 @@ def test_inference_below():
         "Male",
         0,
         "United-States"
-        ]])
+    ]])
 
     df_temp = DataFrame(data=array, columns=utils.predict_cols)
 
     X, _, _, _ = process_data(
-                df_temp,
-                categorical_features=utils.cat_features,
-                encoder=encoder, lb=lb, training=False)
+        df_temp,
+        categorical_features=utils.cat_features,
+        encoder=encoder, lb=lb, training=False)
 
     pred = inference(model, X)
     y = lb.inverse_transform(pred)[0]

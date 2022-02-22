@@ -2,6 +2,7 @@
 from fastapi.testclient import TestClient
 from main import app
 
+
 def test_get_path():
     client = TestClient(app)
     r = client.get("/")
