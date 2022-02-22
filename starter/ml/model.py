@@ -5,8 +5,8 @@ import joblib
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
-from data import process_data
-import utils
+from .data import process_data
+import starter.ml.utils as utils
 
 
 def train_model(X_train, y_train):
