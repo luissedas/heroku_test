@@ -24,7 +24,7 @@ def test_post_class1():
         "native-country": "United-States"
     })
     assert r.status_code == 200, "Failed"
-    #assert r.json() == {"prediction": ">50K"}
+    assert r.json() == {"prediction": ">50K"}
 
 
 def test_post_class2():
@@ -42,4 +42,4 @@ def test_post_class2():
         "native-country": "United-States"
     })
     assert r.status_code == 200
-    #assert r.json() == {"prediction": "<=50K"}
+    assert r.json() == {"prediction": "<=50K"}
