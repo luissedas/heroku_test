@@ -15,7 +15,7 @@ Training data is 80% of the total, and it comes from https://archive.ics.uci.edu
 Evaluation data is 20% of the total, and it comes from https://archive.ics.uci.edu/ml/datasets/census+income
 
 ## Metrics
-The model was evaluated by using precision, recall, fbeta. THe best experiment gave the following metrics precision=0.89. recall=0.85, fbeta=0.87
+The model was evaluated by using precision, recall, fbeta. THe best experiment gave the following metrics precision=0.64. recall=0.59, fbeta=0.61
 
 ## Ethical Considerations
 The model uses personal information to make the predictions and features like gener and race. Model bias could be an issue.

@@ -83,6 +83,8 @@ def slice_metrics(data, model, encoder, lb, cat_features):
     Returns:
         metrics_df (DataFrame): a dataframe containing all metrics
     """
+    data = data.reset_index(drop=True)
+
     X, y, _, _ = process_data(
         data,
         categorical_features=cat_features,
@@ -103,7 +105,7 @@ def slice_metrics(data, model, encoder, lb, cat_features):
     metrics_df = pd.DataFrame(
         data=metrics_data,
         columns=['column', 'value', 'precision', 'recall', 'fbeta'])
-    metrics_df.to_csv("slice_output.txt")
+    # metrics_df.to_csv("slice_output.txt")
     return metrics_df
 
 
