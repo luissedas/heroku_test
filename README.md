@@ -15,7 +15,7 @@ Below you can see the steps that you could follow in order to run the app locall
 - Test a request: `python sample_request.py` 
 
 ## CI/CD
-The CI step is implemented using Github actins, then automatic deploys are activated on Heroku (CD).
+The CI step is implemented using GitHub actions, then automatic deploys are activated on Heroku (CD).
 
 ## Results
 - [continuous_deployment](screenshots/continuous_deployment.png)
