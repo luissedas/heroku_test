@@ -1,0 +1,4 @@
+outs:
+- md5: e560963351cd4910d4465a1060dba025
+  size: 5753
+  path: slice_metrics.txt

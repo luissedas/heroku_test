@@ -2,3 +2,5 @@
 /model.joblib
 /encoder.joblib
 /lb.joblib
+/slice_metrics.txt
+/test_metrics.txt
